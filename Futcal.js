@@ -4,18 +4,18 @@
 
 // Widget customisation
 const defaultSettings = {
-    teamId: "9768",
-    timeZone: "Europe/London",
+    teamId: "8586",
+    timeZone: "Asia/Seoul",
 
     language: "system",
 
     smallWidgetView: args.widgetParameter ? args.widgetParameter : "table",
 
-    showMatchesRound: false,
+    showMatchesRound: true,
     showMatchesTeamsNames: true,
     showMatchesTeamsBadges: false,
     showMatchesOnlyOpposition: false,
-    showHomeOrAway: false,
+    showHomeOrAway: true,
     matchesTwelveHourClock: false,
     showMatchesDayOfWeek: false,
     showMatchesLiveTime: false,
@@ -556,7 +556,7 @@ function formatDate(date) {
         return dictionary.matchDateTomorrow;
     } else {
         const dateFormatter = new DateFormatter();
-        dateFormatter.dateFormat = userSettings.showMatchesDayOfWeek ? "EEE dd/MMM" : "dd/MMM";
+        dateFormatter.dateFormat = userSettings.showMatchesDayOfWeek ? "EEE MM/dd" : "MM/dd";
         // Format will depend on device language
         dateFormatter.locale = (language);
         return dateFormatter.string(date);
